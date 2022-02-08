@@ -1,29 +1,24 @@
 package pro.sky.java.course2;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pro.sky.java.course2.examinerservice.Question;
 import pro.sky.java.course2.examinerservice.repository.JavaQuestionRepository;
-import pro.sky.java.course2.examinerservice.service.ExaminerServiceImpl;
-import pro.sky.java.course2.examinerservice.service.JavaQuestionService;
-import pro.sky.java.course2.examinerservice.service.QuestionService;
+import pro.sky.java.course2.examinerservice.repository.MathQuestionRepository;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
-public class JavaQuestionServiceTest {
+public class MathQuestionServiceTest {
 
     @Mock
-    private JavaQuestionRepository out;
+    private MathQuestionRepository out;
 
     private static Stream<Arguments> remove() {
         return Stream.of(Arguments.of((new Question("Сколько будет 5 + 5", "5 + 5 = 10")),
